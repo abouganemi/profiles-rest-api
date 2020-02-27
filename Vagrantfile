@@ -22,13 +22,13 @@ Vagrant.configure("2") do |config|
    systemctl disable apt-daily.timer
  
    sudo apt-get update
-   sudo apt-get install -y python3-venv zip
+   sudo apt-get install -y python3.8 python3-venv python3.8-venv zip
 
    echo "set bell-style none" >> /home/vagrant/.inputrc
    touch /home/vagrant/.bash_aliases
    if ! grep -q PYTHON_ALIAS_ADDED /home/vagrant/.bash_aliases; then
      echo "# PYTHON_ALIAS_ADDED" >> /home/vagrant/.bash_aliases
-     echo "alias python='python3'" >> /home/vagrant/.bash_aliases
+     echo "alias python='python3.8'" >> /home/vagrant/.bash_aliases
    fi
  SHELL
 end
